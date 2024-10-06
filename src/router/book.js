@@ -15,11 +15,11 @@ BookRouter.post('/', async (req, res) => {
     if(result) {
         console.log('책 등록 성공')
         res.send({
-            message: "정상적으로 등록되었습니다",
+            message: "성공적으로 등록되었습니다",
             book_title: result.title,
-            book_publisher: result.publisher
         })
     }
 })
+
 
 export default BookRouter;
