@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
 
 const PublisherSchema = new mongoose.Schema({
-    Publisher : { type : String, required: true },
-    PublicationTitle : { type : Array, required: true }
+    name : { type : String, required: true }, // 출판사
+    title : { type : Array } //출판물제목
 })
 
-const PublisherModel = mongoose.Schema('Publisher', PublisherSchema);
+const PublisherModel = mongoose.model('Publisher', PublisherSchema);
 
 export { PublisherModel, PublisherSchema };

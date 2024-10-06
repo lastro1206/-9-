@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
 import BookRouter from './router/book.js';
+import PublisherRouter from './router/publisher.js';
 
 dotenv.config();
 
@@ -9,6 +10,7 @@ const app = express();
 
 app.use(express.json());
 app.use('/book', BookRouter);
+app.use('/publish', PublisherRouter)
 
 app.listen(8000, () => { 
     console.log('8000번 포트 서버 실행됨');
