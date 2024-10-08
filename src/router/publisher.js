@@ -32,4 +32,6 @@ PublisherRouter.get("/:publisher", async (req, res) => {
     }
 })
 
+//TODO patch, delete
+
 export default PublisherRouter
