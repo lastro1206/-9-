@@ -15,7 +15,7 @@ BookRouter.post('/', async (req, res) => {
         const publisherRecord = await PublisherModel.findOne({ name: publisher })
 
         if (publisherRecord) {
-            publisherRecord.publushertitle.push(title)
+            publisherRecord.publisherTitle.push(title)
             await publisherRecord.save()
             console.log('출판사 정보 업데이트 성공')
 
@@ -26,6 +26,5 @@ BookRouter.post('/', async (req, res) => {
         }
     }
 })
-
 
 export default BookRouter;

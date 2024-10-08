@@ -23,13 +23,11 @@ PublisherRouter.post("/", async (req, res) => {
 PublisherRouter.get("/:publisher", async (req, res) => {
     console.log('출판사 조회 시작')
     const { publisher } = req.params
-    const result = await PublisherModel.findOne({ name: publisher });
-    
-    if(result) {
-        console.log('출판사 조회 성공')
-        res.send({
-            name: result.name,
-            
+    const publisherRecord = await PublisherModel.findOne({ name: publisher });
+    if(publisherRecord) {
+        return res.send({
+            message: `${publisherRecord.name} 출판사의 책입니다.`,
+            data: publisherRecord.publisherTitle
         })
     }
 })
