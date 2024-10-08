@@ -39,21 +39,20 @@ BookRouter.get('/:title', async (req, res) => {
 })
 
 BookRouter.patch('/:title', async (req, res) => {
-    console.log('책 정보 수정')
+    console.log('책 제목 수정')
     const { title, publisher } = req.body;
-    const updatedBook = await BookModel.findOneAndUpdate({ title, publisher })
+    const updatedBook = await BookModel.findOneAndUpdate({ title })
     if (updatedTitle) {
         return res.send({
         message: '성공적으로 수정되었습니다',
         title: updatedBook.title,
-        publisher: updatedBook.publisher
         })
     }
 })
 
 
 BookRouter.delete('/:title', async (req, res) => {
-    console.log('책 삭제')
+    console.log('책 제목 삭제')
     const { title } = req.params
     const deletedBook = await BookModel.findOneAndDelete({ title });
     if (deletedBook) {
